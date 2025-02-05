@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+    <div class="score inner_cont m-3 fs-4" style="width:max-content">
+        Score: {{ session['score'] }}
+    </div>
+
+    <div class="inner_cont1">
+        <form action="{{ url_for('quiz.quizques') }}" method="post" novalidate>
+            {{ form.hidden_tag() }}
+
+            <div class="ques fs-4">{{ question.id }}. {{ question.question }}</div>
+
+            {% for subfield in form.options %}
+                <div class="fs-5 opt">
+                    {{ subfield }}  {{ subfield.label }}
+                </div>
+            {% endfor %}
+
+            {% if form.options.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.options.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <div class="mt-3">
+                {{ form.submit(class="btn btn-primary btn-lg") }}
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+        {% block title %}
+            {{ title }}
+        {% endblock title %}
+
+        {% block content %}
+            <div class="inner_cont1">
+                <h2>Leaderboard</h2>
+                <hr>
+                    <table class="table table-hover mt-4 fs-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">User</th>
+                                <th scope="col">Max Score</th>
+                                <th scope="col">Category</th>
+                            </tr>
+                        </thead>
+                        {% for user in user_lst %}
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{{loop.index}}</th>
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.max_score}}</td>
+                                    <td>{{user.category}}</td>
+                                </tr>
+                            </tbody>
+                        {%endfor%}
+                    </table>
+            </div>    
+        {% endblock %}

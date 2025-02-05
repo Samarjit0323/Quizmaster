@@ -1,0 +1,225 @@
+/* General Styling */
+body, html {
+    overflow: auto; /* Disables both horizontal and vertical scrolling */
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('bg.png');
+    background-size: cover; /* Ensures it covers the whole container */
+    background-position: center; /* Replace with your image path */
+    color: rgb(187, 249, 255);
+    position: relative;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    align-items: center;
+    backdrop-filter:blur(15px) saturate(120%);
+    padding: 15px 20px;
+    color: white;
+    text-align: center;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Main Container */
+.container {
+    margin: auto;
+    padding: 20px;
+    font-family: Jost, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    background-image: url('bg1.jpg'); /* Replace with your image path */
+    background-blend-mode: overlay;
+    background-size: cover; /* Ensures it covers the whole container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    color: rgb(255, 255, 255);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+    height: 100vh; /* Ensures it fills the screen */
+    text-align: center;
+}
+
+/* Footer Styling */
+.footer {
+    color: white;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    backdrop-filter: saturate(150%) blur(15px)  brightness(80%) contrast(87%);
+}
+
+.footer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    font-family: Jost, sans-serif;
+}
+
+.footer-menu {
+    display: none;
+    justify-content: center;
+    backdrop-filter:blur(15px)  brightness(80%) contrast(87%);
+    padding: 10px;
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin: 5px 0;
+}
+
+.footer-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Toggle Button */
+.toggle-footer-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.inner_cont {
+    backdrop-filter: saturate(150%) blur(15px)  brightness(80%) contrast(87%); 
+    border-radius: 30px;
+    padding: 20px;
+    border-style:outset;
+    border-color: white;
+    border-width: 2px;    
+}
+.inner_cont1 {
+    backdrop-filter: saturate(150%) blur(15px)  brightness(80%) contrast(87%); 
+    border-radius: 30px;
+    padding: 20px;
+    border-style:outset;
+    border-color: rgb(144, 233, 255);
+    border-width: 0.5px;   
+    width: auto ;
+    height:auto;
+}
+.profile_card{
+    backdrop-filter: saturate(150%) blur(15px)  brightness(80%) contrast(87%); 
+    border-radius: 30px;
+    padding: 20px;
+    border-style:outset;
+    border-color: rgb(144, 233, 255);
+    border-width: 0.5px;   
+    display: flex;
+    flex: 0.3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.profile_img{
+    display: flex;
+    align-items: center;
+    border: 0.5px solid white;
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+}
+.alert {
+    font-size: 1.2em;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.alert-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.alert-warning {
+    background-color: #ffc107;
+    color: black;
+}
+.flash_msg{
+    margin-bottom: 15px;
+    width: fit-content ;
+    align-self: center;
+    z-index: 100;
+}
+.divider{
+    border-left: 2px solid #ccc; /* Adds the vertical line */
+    height: 30px; /* You can adjust this to control the line's height */
+    margin: 0 10px; /* Adds space on both sides of the line */
+}
+.opt{
+    backdrop-filter: saturate(150%) blur(15px)  brightness(80%) contrast(87%); 
+    border-radius: 15px;
+    padding: 10px;
+    border-style:outset;
+    border-color: rgb(144, 233, 255);
+    border-width: 0.5px;   
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
