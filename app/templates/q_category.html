@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+    {% block title %}
+        {{ title }}
+    {% endblock title %}
+
+    {% block content %}
+        <div class="inner_cont1" style="width: 40%;" >
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+    
+                <div class="fs-3">
+                    {{ form.options.label }}
+                </div>
+                <hr>
+    
+                {% for subfield in form.options %}
+                    <div class="fs-5 btn btn-primary btn-lg m-3" style="width: 95%">
+                        <span class="subfield ml-2 mr-2">{{ subfield }} </span>  {{ subfield.label }}
+                    </div>
+                    <br>
+                {% endfor %}
+                <hr>
+
+                <div class="mt-3">
+                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                </div>
+            </form>
+        </div>
+    {% endblock content %}
+

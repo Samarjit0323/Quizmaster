@@ -13,7 +13,7 @@
         <form action="{{ url_for('quiz.quizques') }}" method="post" novalidate>
             {{ form.hidden_tag() }}
 
-            <div class="ques fs-4">{{ question.id }}. {{ question.question }}</div>
+            <div class="ques fs-4">{{ question.question }}</div>
 
             {% for subfield in form.options %}
                 <div class="fs-5 opt">

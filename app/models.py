@@ -21,8 +21,9 @@ class Question(db.Model, UserMixin):
     option3=db.Column(db.String(),nullable=False)
     option4=db.Column(db.String(),nullable=False)
     correct_option=db.Column(db.String(),nullable=False)
+    category=db.Column(db.String(),nullable=False)
     def __repr__(self):
-        return f"Question('{self.question}','{self.correct_option}')"
+        return f"Question('{self.question}','{self.correct_option} : {self.category}')"
     
 @login_manager.user_loader
 def load_user(user_id):
