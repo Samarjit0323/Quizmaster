@@ -34,6 +34,7 @@ def quizques():
             print("Questions:",Question.query.filter_by(category=session["category"]).all())
             session["current_question_index"] = 0  # Track progress
             session["score"] = 0
+            session["correct_ans"]=""
             session.modified = True
 
         # If no questions exist for the selected category
@@ -51,6 +52,7 @@ def quizques():
         # Get current question
         question_id = session["question_list"][session["current_question_index"]]
         question = Question.query.get(question_id)
+        session['correct_answer']=question.correct_option
         print("Retrieved question",question)
 
         # Initialize form and set choices dynamically
@@ -64,7 +66,7 @@ def quizques():
                 flash("Correct Answer!", 'success')
                 session['score'] += 5  # Update session score
             else:
-                flash("Wrong Answer!", 'danger')
+                flash(f"Wrong Answer!\nCorrect Answer: {session['correct_answer']}", 'danger')
 
             # Move to next question
             session["current_question_index"] += 1
