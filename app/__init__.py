@@ -17,13 +17,13 @@ mail=Mail() #mail instance
 from app.config import Config
 def create_app(config_class=Config): 
     quiz_app=Flask(__name__)
-    quiz_app.config.from_object(Config) #importing configurations from Config class
     
     db.init_app(quiz_app) #initializing database
     bcrypt.init_app(quiz_app) #initializing password hashing
     mail.init_app(quiz_app)  #initializing mail
     login_manager.init_app(quiz_app) #initializing login 
     Session(quiz_app)
+    quiz_app.config.from_object(Config) #importing configurations from Config class
     
     from app.main.routes import main
     quiz_app.register_blueprint(main) #registering users blueprint
