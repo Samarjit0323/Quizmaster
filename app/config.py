@@ -1,7 +1,8 @@
 import os
 class Config:
     SECRET_KEY=os.environ.get("SECRET_KEY")
-    SQLALCHEMY_DATABASE_URI="sqlite:///instance/site.db"
+    BASE_DIR = '/opt/render/project/src' 
+    SQLALCHEMY_DATABASE_URI=os.environ.get("SQLALCHEMY_DATABASE_URI") or f'sqlite:///{os.path.join(BASE_DIR, "instance", "site.db")}'
     MAIL_SERVER='smtp.gmail.com'
     MAIL_PORT=587
     MAIL_USE_TLS=True
