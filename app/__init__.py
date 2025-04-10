@@ -12,7 +12,6 @@ login_manager.login_view='users.login' #login view function name
 login_manager.login_message="Please Log In to continue" #login message
 login_manager.login_message_category="warning" #login message category
 mail=Mail() #mail instance
-db=SQLAlchemy() #database instance
 
 
 from app.config import Config
